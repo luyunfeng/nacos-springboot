@@ -4,11 +4,7 @@ import com.alibaba.nacos.api.annotation.NacosInjected;
 import com.alibaba.nacos.api.config.ConfigService;
 import com.alibaba.nacos.api.naming.NamingService;
 import com.alibaba.nacos.api.naming.pojo.Instance;
-import com.alibaba.nacos.client.naming.beat.BeatReactor;
-import com.alibaba.nacos.client.naming.net.NamingProxy;
-
 import com.alibaba.nacos.spring.context.annotation.config.NacosPropertySource;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -16,16 +12,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-import static tech.soulcoder.nacos.NacosSpringbootApplication.DATA_ID;
-import static tech.soulcoder.nacos.NacosSpringbootApplication.GROUP_ID;
 
 @SpringBootApplication
 @EnableAutoConfiguration
-@NacosPropertySource(dataId = DATA_ID)
+@NacosPropertySource(dataId = NacosSpringbootApplication.DATA_ID)
 @NacosPropertySource(dataId = "spring-mysql.yml")
 public class NacosSpringbootApplication {
 
